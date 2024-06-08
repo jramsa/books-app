@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function BookList(props) {
 
-  const[books, setBooks]=useState([]); //avec le serveur json
+  const[books, setBooks]=useState([]); //avec serveur JSON
+  const navigate = useNavigate(); //avec serveur JSON
   
   useEffect(
     ()=>{
@@ -16,8 +17,24 @@ function BookList(props) {
     },[]
   ) //avec le serveur json
 
-  const deleteBook = (id)=>{
-    //A faire
+  const deleteBook = async(id)=>{
+    const settings = {
+      method: 'DELETE',
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+      },
+  };
+  if(window.confirm("Etes-vous sûr de supprimer ce livre ?")){
+    const response = await fetch("http://localhost:3001/books/"+id, settings);
+    console.log(response);
+    if(!response.ok){
+      alert('Erreur : Le livre n\'a pas été supprimé')
+    }
+    //rafraichir la page ?
+    navigate("/books");
+    return response;
+  }
   }
 
   return (
@@ -44,8 +61,8 @@ function BookList(props) {
       {/*<td><button className="btn btn-primary" onClick={()=>props.showFormHandler("edit",book.id)}>Editer</button></td> //sans le router*/}
       <td><Link className="btn btn-info" to={"/books/"+book.id}>Voir détails</Link></td> {/*avec le router*/}
       <td><Link className="btn btn-primary" to={"/books/edit/"+book.id}>Editer</Link></td> {/*avec le router*/}
-      {/*<td><button className="btn btn-danger" onClick={()=>props.deleteBookHandler(book.id)}>Supprimer</button></td> //sans le serveur JSON*/}
-      <td><button className="btn btn-danger" onClick={deleteBook(book.id)}>Supprimer</button></td>
+      {/*<td><button className="btn btn-danger" onClick={()=>props.deleteBookHandler(book.id)}>Supprimer</button></td> //sans serveur JSON*/}
+      <td><button className="btn btn-danger" onClick={()=>deleteBook(book.id)}>Supprimer</button></td>
     </tr>
         )}
   </tbody>

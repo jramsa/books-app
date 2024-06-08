@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link} from "react-router-dom"
 
 function BookDetails(props){
     const {id} = useParams();
     //const[book, setBook] = useState(props.books.find(b=>b.id===+id)) //sans le serveur json
-    const[book, setBook]=useState([]); //avec le serveur json
+    const[book, setBook]=useState([]); //avec serveur JSON
   
   useEffect(
     ()=>{
@@ -14,8 +14,8 @@ function BookDetails(props){
         setBook(data);
       }
       getData();
-    },[]
-  ) //avec le serveur json
+    }
+  ) //avec serveur JSON
 
     return(
         <>
