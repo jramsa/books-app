@@ -68,7 +68,7 @@ function BookEdit(props){
     </div>
     <div className="mb-3">
       <label htmlFor="description" className="form-label">Description</label>
-      <input type="text" className="form-control" id="description" name="description" value={book.description} onChange={inputChangeHandler}/>
+      <textarea className="form-control" id="description" name="description" value={book.description} onChange={inputChangeHandler}/>
     </div>
     <div className="mb-3">
       <label htmlFor="price" className="form-label">Prix</label>

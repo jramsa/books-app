@@ -25,14 +25,13 @@ function BookList(props) {
           'Content-Type': 'application/json',
       },
   };
-  if(window.confirm("Etes-vous sûr de supprimer ce livre ?")){
+  if(window.confirm("Etes-vous sûr de vouloir supprimer ce livre ?")){
     const response = await fetch("http://localhost:3001/books/"+id, settings);
     console.log(response);
     if(!response.ok){
       alert('Erreur : Le livre n\'a pas été supprimé')
     }
-    //rafraichir la page ?
-    navigate("/books");
+    setBooks(books.filter(b=>b.id !== id)) //mise a jour du tableau
     return response;
   }
   }

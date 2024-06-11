@@ -1,0 +1,64 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Slight Edge",
+      "author": "Jeff Olsen",
+      "description": "description du livre Slight Edge",
+      "price": "15.5"
+    },
+    {
+      "title": "Atomic Habits",
+      "author": "James Clear ",
+      "description": "description du livre Atomic Habits",
+      "price": 22.4,
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "title": "Power of habits",
+      "author": "Charles Duhigg",
+      "description": "description du livre Power of habits",
+      "price": "14"
+    },
+    {
+      "id": "53a4",
+      "title": "Mort Sur Le Nil",
+      "author": "Agatha Christie",
+      "description": "description du livre Mort sur le Nil",
+      "price": 20.2
+    },
+    {
+      "id": "58ff",
+      "title": "TEST 1",
+      "author": "TEST 1",
+      "description": "TEST 1",
+      "price": "9.5"
+    },
+    {
+      "id": "8a94",
+      "title": "TEST 2",
+      "author": "TEST 2"
+    },
+    {
+      "id": "f1ae",
+      "title": "TEST 3",
+      "author": "TEST 3",
+      "price": "0"
+    },
+    {
+      "id": "67e6",
+      "title": "Le Couteau",
+      "author": "Jo Nesbo",
+      "description": "Description du livre Le Couteau",
+      "price": "10.5"
+    },
+    {
+      "id": "bf66",
+      "title": "A Clash Of King",
+      "author": "G.R.R. Martin",
+      "description": "Description du livre A Clash Of King",
+      "price": "22.5"
+    }
+  ]
+}

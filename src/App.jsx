@@ -78,7 +78,7 @@ function App() {
 
   return (
     <div className='container'>
-      <h1>Ma bibliothèque</h1>
+      <h1>REACT : Ma bibliothèque</h1>
       {/* Sans le router
       <BooksList books={books} showFormHandler={showForm} deleteHandler={deleteBook}/>
       <button className='btn btn-success' onClick={()=>showForm("add")}>Ajouter un livre</button>
@@ -94,7 +94,7 @@ function App() {
     <Route path='/books/:id' exact element={<BooksDetails books={books} />} />
 </Routes>*/}
 
-{/*AVec le rooter + server JSON*/}
+{/*Avec le rooter + server JSON*/}
 <Routes>
     <Route path='/' element={<Navigate to ='/books' replace='' />} />
     <Route path='/books' exact element={<BooksList />} />
